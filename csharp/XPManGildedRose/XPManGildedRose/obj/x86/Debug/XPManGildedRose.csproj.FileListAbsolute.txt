@@ -1,0 +1,12 @@
+C:\QuantivProjects\GildedRose-XPMan\csharp\XPManGildedRose\XPManGildedRose\bin\Debug\XPManGildedRose.exe
+C:\QuantivProjects\GildedRose-XPMan\csharp\XPManGildedRose\XPManGildedRose\bin\Debug\XPManGildedRose.pdb
+C:\QuantivProjects\GildedRose-XPMan\csharp\XPManGildedRose\XPManGildedRose\bin\Debug\nunit.framework.dll
+C:\QuantivProjects\GildedRose-XPMan\csharp\XPManGildedRose\XPManGildedRose\obj\x86\Debug\XPManGildedRose.csprojResolveAssemblyReference.cache
+C:\QuantivProjects\GildedRose-XPMan\csharp\XPManGildedRose\XPManGildedRose\obj\x86\Debug\XPManGildedRose.exe
+C:\QuantivProjects\GildedRose-XPMan\csharp\XPManGildedRose\XPManGildedRose\obj\x86\Debug\XPManGildedRose.pdb
+C:\QuantivProjects\GildedRose-XPManOwn\csharp\XPManGildedRose\XPManGildedRose\obj\x86\Debug\XPManGildedRose.exe
+C:\QuantivProjects\GildedRose-XPManOwn\csharp\XPManGildedRose\XPManGildedRose\obj\x86\Debug\XPManGildedRose.pdb
+C:\QuantivProjects\GildedRose-XPManOwn\csharp\XPManGildedRose\XPManGildedRose\bin\Debug\XPManGildedRose.exe
+C:\QuantivProjects\GildedRose-XPManOwn\csharp\XPManGildedRose\XPManGildedRose\bin\Debug\XPManGildedRose.pdb
+C:\QuantivProjects\GildedRose-XPManOwn\csharp\XPManGildedRose\XPManGildedRose\bin\Debug\nunit.framework.dll
+C:\QuantivProjects\GildedRose-XPManOwn\csharp\XPManGildedRose\XPManGildedRose\obj\x86\Debug\XPManGildedRose.csprojResolveAssemblyReference.cache

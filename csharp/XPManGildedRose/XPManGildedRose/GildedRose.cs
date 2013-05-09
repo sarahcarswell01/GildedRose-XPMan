@@ -9,83 +9,95 @@ namespace GildedRose
 		{
 			this.Items = Items;
 		}
-		
+
+    const string concertTickets = "Backstage passes to a TAFKAL80ETC concert";
+    const string cheese = "Aged Brie";
+    const string legendaryItem = "Sulfuras, Hand of Ragnaros";
+    const int MAXQUALITY = 50;
+    const int MINQUALITY = 0;
+
 		public void UpdateQuality()
 		{
-			for (var i = 0; i < Items.Count; i++)
+			foreach (var item in Items)
 			{
-				if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
+				if (item.Name != cheese && item.Name != concertTickets)
 				{
-					if (Items[i].Quality > 0)
+					if (item.Quality > MINQUALITY)
 					{
-						if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-						{
-							Items[i].Quality = Items[i].Quality - 1;
-						}
+            DecrementNonLegendaryItem(item);
 					}
 				}
 				else
 				{
-					if (Items[i].Quality < 50)
-					{
-						Items[i].Quality = Items[i].Quality + 1;
-						
-						if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
-						{
-							if (Items[i].SellIn < 11)
-							{
-								if (Items[i].Quality < 50)
-								{
-									Items[i].Quality = Items[i].Quality + 1;
-								}
-							}
-							
-							if (Items[i].SellIn < 6)
-							{
-								if (Items[i].Quality < 50)
-								{
-									Items[i].Quality = Items[i].Quality + 1;
-								}
-							}
-						}
-					}
+          UpdateConcertTicketQuality(item);
 				}
 				
-				if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
+				if (item.Name != legendaryItem)
 				{
-					Items[i].SellIn = Items[i].SellIn - 1;
+					item.SellIn--;
 				}
 				
-				if (Items[i].SellIn < 0)
+				if (item.SellIn < MINQUALITY)
 				{
-					if (Items[i].Name != "Aged Brie")
+					if (item.Name != cheese)
 					{
-						if (Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
+						if (item.Name != concertTickets)
 						{
-							if (Items[i].Quality > 0)
+							if (item.Quality > MINQUALITY)
 							{
-								if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-								{
-									Items[i].Quality = Items[i].Quality - 1;
-								}
+                DecrementNonLegendaryItem(item);
 							}
 						}
 						else
 						{
-							Items[i].Quality = Items[i].Quality - Items[i].Quality;
+							item.Quality = MINQUALITY;
 						}
 					}
 					else
 					{
-						if (Items[i].Quality < 50)
-						{
-							Items[i].Quality = Items[i].Quality + 1;
-						}
+            Increment(item);
 					}
 				}
 			}
 		}
 		
+    private void UpdateConcertTicketQuality(Item item)
+    {
+      if (item.Quality < MAXQUALITY)
+				{
+					item.Quality++;
+
+          if (item.Name == concertTickets)
+					{
+						if (item.SellIn < 11)
+						{
+              Increment(item);
+						}
+							
+						if (item.SellIn < 6)
+						{
+              Increment(item);
+						}
+					}
+				}
+    }
+
+    private void Increment(Item item)
+    {
+      if (item.Quality < MAXQUALITY)
+			{
+				item.Quality++; 
+			}
+    }
+
+    private void DecrementNonLegendaryItem(Item item)
+    {
+      if (item.Name != legendaryItem)
+			{
+        item.Quality--;
+			}
+    }
+
 	}
 	
 	public class Item
